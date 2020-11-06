@@ -20,7 +20,7 @@ calc.nums.forEach((num) => {
 
 // Colocar o valor pelo teclado sem estar focado
 const putIntoInputKeyboard = (key) => {
-  calc.input.value += +key || key;
+  calc.input.value += key;
 };
 
 // limpar imput
@@ -35,7 +35,7 @@ const backSpace = () => {
   const newValue = value.join("");
   calc.input.value = newValue;
 };
-
+// clear events
 calc.clear.addEventListener("click", () => {
   backSpace();
 });
@@ -56,7 +56,7 @@ const operation = ({ target }, keyType) => {
   calc.input.setAttribute("placeholder", +calc.input.value);
   calc.input.value = "";
 };
-
+// select operator and number events
 calc.operators.forEach((operator) => {
   operator.addEventListener("click", operation);
 });
