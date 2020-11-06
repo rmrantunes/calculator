@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form[data-calc="calc"] {
+  padding: 2rem;
+  background-color: #eee;
+  border-radius: 1.5rem;
+}
+
+[data-calc="input"] {
+  text-align: right;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color:black;
+  color: #fff;
+}
+
+.nums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.nums [data-calc="num"] {
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color:#666;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.nums [data-calc="num"][value="0"] {
+  grid-column: 2 /-1;
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.operators [data-calc] {
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #444;
+  color: #fff;
+  font-size: 1.125rem;
+}
+
+.operators [data-calc="result"] {
+  grid-column: 3 / -1;
+}

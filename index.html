@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <form action="/" class="app" data-calc="calc">
+      <input type="text" name="input" id="input" data-calc="input" autofocus-A/>
+      <div class="operators">
+        <button type="button" data-calc="clear">C</button>
+        <button type="button" data-calc="hard-clear">HC</button>
+        <button type="button" data-calc="result">=</button>
+        <button type="button" data-calc="operator" value="sum">+</button>
+        <button type="button" data-calc="operator" value="minus">-</button>
+        <button type="button" data-calc="operator" value="divide">/</button>
+        <button type="button" data-calc="operator" value="mult">*</button>
+      </div>
+      <div class="nums">
+        <button type="button" value="1" data-calc="num">1</button>
+        <button type="button" value="2" data-calc="num">2</button>
+        <button type="button" value="3" data-calc="num">3</button>
+        <button type="button" value="4" data-calc="num">4</button>
+        <button type="button" value="5" data-calc="num">5</button>
+        <button type="button" value="6" data-calc="num">6</button>
+        <button type="button" value="7" data-calc="num">7</button>
+        <button type="button" value="8" data-calc="num">8</button>
+        <button type="button" value="9" data-calc="num">9</button>
+        <button type="button" value="." data-calc="num">.</button>
+        <button type="button" value="0" data-calc="num">0</button>
+      </div>
+    </form>
+    <script src="calc.js"></script>
+  </body>
+</html>
