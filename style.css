@@ -45,6 +45,7 @@ form[data-calc="calc"] {
   background-color: #444;
   color: #fff;
   font-size: 1.125rem;
+  font-weight: bold;
 }
 
 .operators [data-calc="clear"] {
@@ -98,4 +99,9 @@ form[data-calc="calc"] {
 
 .nums [data-calc="num"][value="0"] {
   grid-column: 2 /-1;
+}
+
+.operators [data-calc]:active,
+.nums [data-calc]:active {
+  opacity: 0.8;
 }
