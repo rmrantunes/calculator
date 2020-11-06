@@ -20,7 +20,7 @@ calc.nums.forEach((num) => {
 
 // Colocar o valor pelo teclado sem estar focado
 const putIntoInputKeyboard = (key) => {
-  calc.input.value += +key;
+  calc.input.value += +key || key;
 };
 
 // limpar imput
@@ -90,10 +90,10 @@ calc.result.addEventListener("click", showResult);
 
 // complementar: executar a funcão operation e show result pelo teclado
 // fase de produção e testes
-window.addEventListener("keyup", ({ key, preventDefault }) => {
+window.addEventListener("keyup", ({ key }) => {
   key === "Enter" && showResult();
   key === "Backspace" && backSpace();
-  "1, 2, 3, 4, 5, 6, 7, 8, 9".includes(key) && putIntoInputKeyboard(key);
+  "1 2 3 4 5 6 7 8 9 0 .".includes(key) && putIntoInputKeyboard(key);
   const keyType = calc.operators
     .filter((operator) => operator.innerText === key)
     .map((item) => item.value);
