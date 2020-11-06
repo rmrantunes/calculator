@@ -1,5 +1,4 @@
 const calc = {
-  form: document.querySelector('[data-calc="calc"]'),
   input: document.querySelector('[data-calc="input"]'),
   nums: document.querySelectorAll('[data-calc="num"]'),
   operators: Array.from(document.querySelectorAll('[data-calc="operator"]')),
@@ -71,7 +70,6 @@ const showResult = () => {
     // na primeira iteração, ele pega o valor do primeiro e já opera com o segundo
     // na segunda iteração, o type não é do teceiro valor, mas do segundo.
     // por isso o (type: current.type)
-
     if (returned.type === "sum")
       return { num: returned.num + current.num, type: current.type };
     else if (returned.type === "minus")
@@ -83,6 +81,8 @@ const showResult = () => {
   });
   calc.input.value = result.num;
   allHistory.push(memory);
+  // complementar: continuar a operação mesmo depois de ter apertado "="
+  //  já resolvido
   memory = [];
 };
 
@@ -90,15 +90,18 @@ calc.result.addEventListener("click", showResult);
 
 // complementar: executar a funcão operation e show result pelo teclado
 // fase de produção e testes
+// Tá bagunçado mas é assim que a gente gosta
 window.addEventListener("keyup", ({ key }) => {
   key === "Enter" && showResult();
   key === "Backspace" && backSpace();
-  "1 2 3 4 5 6 7 8 9 0 .".includes(key) && putIntoInputKeyboard(key);
+  if (
+    !(calc.input === document.activeElement) &&
+    "1 2 3 4 5 6 7 8 9 0 .".includes(key)
+  ) {
+    putIntoInputKeyboard(key);
+  }
   const keyType = calc.operators
     .filter((operator) => operator.innerText === key)
     .map((item) => item.value);
   "sum mult divide minus".includes(keyType[0]) && operation({}, keyType[0]);
 });
-
-// complementar: continuar a operação mesmo depois de ter apertado "="
-//  já resolvido
