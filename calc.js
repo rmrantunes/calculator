@@ -95,7 +95,7 @@ window.addEventListener("keyup", ({ key }) => {
   key === "Enter" && showResult();
   key === "Backspace" && backSpace();
   if (
-    !(calc.input === document.activeElement) &&
+    calc.input !== document.activeElement &&
     "1 2 3 4 5 6 7 8 9 0 .".includes(key)
   ) {
     putIntoInputKeyboard(key);
