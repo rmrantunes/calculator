@@ -8,11 +8,23 @@
   </head>
   <body>
     <form action="/" class="app" data-calc="calc">
-      <input type="text" name="input" id="input" data-calc="input" autofocus-A/>
+      <input
+        type="text"
+        name="input"
+        id="input"
+        data-calc="input"
+        placeholder="0"
+      />
       <div class="operators">
-        <button type="button" data-calc="clear">C</button>
-        <button type="button" data-calc="hard-clear">HC</button>
-        <button type="button" data-calc="result">=</button>
+        <button
+          type="button"
+          data-calc="clear"
+          title="One click to backspace, double click to clear the input"
+        >
+          C
+        </button>
+        <button type="button" data-calc="hard-clear" title="Hard Clear">HC</button>
+        <button type="button" data-calc="result" title="Show Result">=</button>
         <button type="button" data-calc="operator" value="sum">+</button>
         <button type="button" data-calc="operator" value="minus">-</button>
         <button type="button" data-calc="operator" value="divide">/</button>
