@@ -47,7 +47,7 @@ calc.hardClear.addEventListener("click", () => {
 });
 
 // selecionar o numero e o tipo de operador e colocar no histórico
-const operation = ({ target }, keyType) => {
+const pushToMemory = ({ target }, keyType) => {
   memory.push({
     num: +calc.input.value,
     type: target ? target.value : keyType,
@@ -57,7 +57,7 @@ const operation = ({ target }, keyType) => {
 };
 // select operator and number events
 calc.operators.forEach((operator) => {
-  operator.addEventListener("click", operation);
+  operator.addEventListener("click", pushToMemory);
 });
 
 // mostrar resultado
@@ -88,7 +88,7 @@ const showResult = () => {
 
 calc.result.addEventListener("click", showResult);
 
-// complementar: executar a funcão operation e show result pelo teclado
+// complementar: executar a funcão pushToMemory e show result pelo teclado
 // fase de produção e testes
 // Tá bagunçado mas é assim que a gente gosta
 window.addEventListener("keyup", ({ key }) => {
@@ -103,5 +103,5 @@ window.addEventListener("keyup", ({ key }) => {
   const keyType = calc.operators
     .filter((operator) => operator.innerText === key)
     .map((item) => item.value);
-  "sum mult divide minus".includes(keyType[0]) && operation({}, keyType[0]);
+  "sum mult divide minus".includes(keyType[0]) && pushToMemory({}, keyType[0]);
 });
