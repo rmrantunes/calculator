@@ -23,12 +23,32 @@
         >
           C
         </button>
-        <button type="button" data-calc="hard-clear" title="Hard Clear">HC</button>
+        <button type="button" data-calc="hard-clear" title="Hard Clear">
+          HC
+        </button>
         <button type="button" data-calc="result" title="Show Result">=</button>
-        <button type="button" data-calc="operator" value="sum">+</button>
-        <button type="button" data-calc="operator" value="minus">-</button>
-        <button type="button" data-calc="operator" value="divide">/</button>
-        <button type="button" data-calc="operator" value="mult">*</button>
+        <button type="button" data-calc="operator" value="sum" title="Sum">
+          +
+        </button>
+        <button type="button" data-calc="operator" value="minus" title="Minus">
+          -
+        </button>
+        <button
+          type="button"
+          data-calc="operator"
+          value="divide"
+          title="Divide"
+        >
+          /
+        </button>
+        <button
+          type="button"
+          data-calc="operator"
+          value="mult"
+          title="Multiply"
+        >
+          *
+        </button>
       </div>
       <div class="nums">
         <button type="button" value="1" data-calc="num">1</button>
@@ -44,6 +64,9 @@
         <button type="button" value="0" data-calc="num">0</button>
       </div>
     </form>
+    <div class="comment" aria-label="You can use your keyboard as well">
+      You can use your keyboard as well
+    </div>
     <script src="calc.js"></script>
   </body>
 </html>

@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 form[data-calc="calc"] {
@@ -104,4 +105,17 @@ form[data-calc="calc"] {
 .operators [data-calc]:active,
 .nums [data-calc]:active {
   opacity: 0.8;
+}
+
+.comment {
+  background-color: #eee;
+  width: 370px;
+  padding: 1rem 0;
+  border-radius: 0.75rem;
+  color: #666;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  text-align: center;
 }
