@@ -29,10 +29,7 @@ const clearInput = (hard = false) => {
 };
 // backspace
 const backSpace = () => {
-  const value = Array.from(calc.input.value);
-  value.pop();
-  const newValue = value.join("");
-  calc.input.value = newValue;
+  calc.input.value = calc.input.value.slice(0, -1);
 };
 // clear events
 calc.clear.addEventListener("click", () => {
