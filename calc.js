@@ -100,5 +100,7 @@ window.addEventListener("keyup", ({ key }) => {
   const keyType = calc.operators
     .filter((operator) => operator.innerText === key)
     .map((item) => item.value);
+
+  console.log(keyType);
   "sum mult divide minus".includes(keyType[0]) && pushToMemory({}, keyType[0]);
 });
